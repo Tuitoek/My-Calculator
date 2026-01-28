@@ -3,6 +3,16 @@ const buttonValues = ["AC", "+/-", "%", "/", "7", "8", "9", "x", "4", "5", "6", 
 const rightSymbols = ["/","x","-","=","+"];
 const topSymbols = ["AC","+/-","%"];
 
+// Get display element 
+const display = document.getElementById("display");
+
+//Variables for A+B/ A-B/ AxB/ A/B
+let A = 0;
+let operator = null;
+let B = null;
+
+
+
 for(let i=0; i < buttonValues.length; i++){
     // Creating buttons
     let value = buttonValues[i];
@@ -21,6 +31,23 @@ for(let i=0; i < buttonValues.length; i++){
         button.style.backgroundColor = "#D4D4D2";
         button.style.color = "#1C1C1C";
     }
+
+    // process button clicks
+    button.addEventListener("click", function(){
+        if(rightSymbols.includes(value)){
+
+        } else if (topSymbols.includes(value)){
+
+        }else{ //Numbers or decimal
+            if(value == "."){
+
+            }else{
+                display.value += value;
+            }
+
+        }
+    });
+
     // Adding button to buttons div
     document.getElementById("buttons").appendChild(button);
 }
