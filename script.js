@@ -48,7 +48,12 @@ for(let i=0; i < buttonValues.length; i++){
                     let numB = Number(B);
 
                     if (operator == "/"){
-                        display.value = numA / numB;
+                        if (numA / 0 || 0 / numB){
+                            display.value = "0";
+                        } else{
+                            display.value = numA / numB;
+                        }
+                        
                     } else if (operator == "x"){
                         display.value = numA * numB;
                     } else if (operator == "-" ){
