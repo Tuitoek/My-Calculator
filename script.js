@@ -12,6 +12,12 @@ let operator = null;
 let B = null;
 
 
+// Function for clearing all
+function clearAll(){
+    A = 0;
+    operator = null;
+    B = null;
+}
 
 for(let i=0; i < buttonValues.length; i++){
     // Creating buttons
@@ -38,7 +44,8 @@ for(let i=0; i < buttonValues.length; i++){
 
         } else if (topSymbols.includes(value)){
             if (value == "AC"){
-
+                clearAll();
+                display.value = " ";
             } else if (value == "+/-"){
                 if (display.value != "" && display.value != "0"){
                     if(display.value[0] =="-"){
@@ -56,8 +63,8 @@ for(let i=0; i < buttonValues.length; i++){
                 if(display.value != "" && !display.value.includes(value))
                     {
                     display.value += value;
-            }
-        }else if(display.value == '0'){
+                     }
+            }else if(display.value == '0'){
                 display.value = value;
             }
             else{
